@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysqldb
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Admin#123
+      - MYSQL_DATABASE=springboot_mysql_example
+      - MYSQL_USER=naresh
+      - MYSQL_PASSWORD=Naresh#240
+    networks:
+      - mysql_network
+  springboot-mysql:
+    restart: always
+    image: naresh240/springboot-mysql:latest
+    container_name: springboot-mysql
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+    networks:
+      - mysql_network
+
+volumes:
+    db_data: {}
+
+networks:
+  mysql_network:
