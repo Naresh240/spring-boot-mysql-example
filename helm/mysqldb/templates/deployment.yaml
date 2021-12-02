@@ -28,50 +28,50 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          volumeMounts:
-          - name: {{ template "mysqldb.fullname" . }}
-            mountPath: /var/lib/mysql
-          env:
-          - name: MYSQL_ROOT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ template "mysqldb.secretName" . }}
-                key: password
-          - name: MYSQL_DATABASE
-            valueFrom:
-              configMapKeyRef:
-                name: {{ template "mysqldb.configmapName" . }}
-                key: database
-          - name: MYSQL_USER
-            valueFrom:
-              configMapKeyRef:
-                name: {{ template "mysqldb.configmapName" . }}
-                key: username
-          - name: MYSQL_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ template "mysqldb.secretName" . }}
-                key: password
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          resources:
+      - name: {{ .Chart.Name }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        volumeMounts:
+        - name: {{ template "mysqldb.fullname" . }}
+          mountPath: /var/lib/mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "mysqldb.secretName" . }}
+              key: password
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "mysqldb.configmapName" . }}
+              key: database
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: {{ template "mysqldb.configmapName" . }}
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "mysqldb.secretName" . }}
+              key: password
+        ports:
+        - name: http
+          containerPort: {{ .Values.service.port }}
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+        resources:
             {{- toYaml .Values.resources | nindent 12 }}
-        volumes:
-        - name: airflow-logs
-          persistentVolumeClaim:
-            claimName: {{ template "mysqldb.fullname" . }}
+      volumes:
+      - name: {{ template "mysqldb.fullname" . }}
+        persistentVolumeClaim:
+          claimName: {{ template "mysqldb.fullname" . }}
