@@ -10,15 +10,14 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=Admin#123
-      - MYSQL_DATABASE=mysqldb
-      - MYSQL_USER=naresh
-      - MYSQL_PASSWORD=Naresh#240
     networks:
       - mysql_network
   springboot-mysql:
     restart: always
     image: naresh240/springboot-mysql:latest
     container_name: springboot-mysql
+    environment:
+      - SPRINGBOOT_PASSWORD=Admin#123
     ports:
       - 8080:8080
     depends_on:
