@@ -1,0 +1,6 @@
+dependencies:
+- name: mysqldb
+  repository: https://raw.githubusercontent.com/naresh240/spring-boot-mysql-example/helm/helm
+  version: 0.1.0
+digest: sha256:bea66a232c93c11cecbdc7df8682cc4766a71fa8433277e7def725e8b55301d5
+generated: "2021-12-04T06:10:32.887170014Z"

@@ -99,4 +99,4 @@ secrets:
   Password: TmFyZXNoIzI0MA==
 configmaps:
   username: naresh
-  database: springboot_mysql_example
+  database: mysqldb
