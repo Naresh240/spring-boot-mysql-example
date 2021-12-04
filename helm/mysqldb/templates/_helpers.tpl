@@ -58,7 +58,7 @@ Generate chart secret name
 {{- end -}}
 
 {{/*
-Generate chart secret name
+Generate chart configmaps name
 */}}
 {{- define "mysqldb.configmapName" -}}
 {{ default (include "mysqldb.fullname" .) .Values.existingConfigmap }}

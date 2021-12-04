@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  mysqldb:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-12-04T05:48:27.418170217Z"
+    description: A Helm chart for Kubernetes
+    digest: 44bff3f2b21b6f5ed845c77ae1a5ccae31ca89c97cb231361f609ab6dfacf067
+    name: mysqldb
+    type: application
+    urls:
+    - mysqldb-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-12-04T05:48:27.417161722Z"
