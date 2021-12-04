@@ -1,9 +1,0 @@
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/SpringBootMySqlApplication.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/converters/ProductToProductForm.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/domain/Product.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/converters/ProductFormToProduct.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/services/ProductService.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/commands/ProductForm.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/repositories/ProductRepository.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/controllers/ProductController.java
-/root/spring-boot-mysql-example/src/main/java/guru/springframework/services/ProductServiceImpl.java
