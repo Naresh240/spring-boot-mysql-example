@@ -99,4 +99,4 @@ secrets:
   Password: TmFyZXNoIzI0MA==
 configmaps:
   username: naresh
-  database: mysqldb
+  database: mysql

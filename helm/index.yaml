@@ -3,12 +3,12 @@ entries:
   mysqldb:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-12-04T05:48:27.418170217Z"
+    created: "2021-12-13T05:33:06.728223907Z"
     description: A Helm chart for Kubernetes
-    digest: 44bff3f2b21b6f5ed845c77ae1a5ccae31ca89c97cb231361f609ab6dfacf067
+    digest: b3e4138f643a1bd672929dd0ecc863c9cd3d851ac3d82986164af523a0b665a3
     name: mysqldb
     type: application
     urls:
-    - mysqldb-0.1.0.tgz
+    - https://github.com/Naresh240/spring-boot-mysql-example.git/mysqldb-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-04T05:48:27.417161722Z"
+generated: "2021-12-13T05:33:06.727228609Z"
